@@ -1,0 +1,41 @@
+@font-face {
+    font-family: 'SF Mono Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('SF Mono Regular'), url('SFMonoRegular.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'SF Mono Light';
+    font-style: normal;
+    font-weight: normal;
+    src: local('SF Mono Light'), url('SFMonoLight.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'SF Mono Medium';
+    font-style: normal;
+    font-weight: normal;
+    src: local('SF Mono Medium'), url('SFMonoMedium.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'SF Mono Semibold';
+    font-style: normal;
+    font-weight: normal;
+    src: local('SF Mono Semibold'), url('SFMonoSemibold.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'SF Mono Bold';
+    font-style: normal;
+    font-weight: normal;
+    src: local('SF Mono Bold'), url('SFMonoBold.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'SF Mono Heavy';
+    font-style: normal;
+    font-weight: normal;
+    src: local('SF Mono Heavy'), url('SFMonoHeavy.woff2') format('woff2');
+}
