@@ -29,4 +29,4 @@ yarn install
 npm start
 ```
 
-<p align="center"><b>UI</b> insipired by <a href="brittanychiang.com" target="_blank">brittanychiang.com</a></p>
+<p align="center"><b>UI</b> inspired by <a href="brittanychiang.com" target="_blank">brittanychiang.com</a></p>
