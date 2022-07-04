@@ -26,7 +26,7 @@ yarn install
 
 2. Start the development server
 ```sh
-npm start
+yarn start
 ```
 
 <p align="center"><b>UI</b> inspired by <a href="https://brittanychiang.com" target="_blank">brittanychiang.com</a></p>
