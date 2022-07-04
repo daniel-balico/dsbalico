@@ -27,20 +27,21 @@ const Navbar: React.FC<Props> = ({ project }) => {
 		const nav_bottom_layer = document.getElementById("nav-bottom-layer");
 
 		if (hamburger && navbar && nav_bottom_layer) {
-			hamburger.classList.toggle("is-active");
-
 			if (isOpen) {
 				navbar.classList.remove("animation_wipe-right");
 				navbar.classList.add("animation_wipe-left");
 				navbar.classList.remove("hidden");
 
 				nav_bottom_layer.classList.remove("hidden");
+
+				hamburger.classList.add("is-active");
 			}
 			else {
 				navbar.classList.remove("animation_wipe-left");
 				navbar.classList.add("animation_wipe-right");
 
 				nav_bottom_layer.classList.add("hidden");
+				hamburger.classList.remove("is-active");
 
 				setTimeout(() => navbar.classList.add("hidden"), 300);
 			}
