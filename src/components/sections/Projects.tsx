@@ -2,7 +2,7 @@ import React from 'react'
 import FeaturedProject from './../FeaturedProject';
 import { useNavigate } from 'react-router-dom';
 import { Section } from 'react-scroll-section';
-import featuredProjects from './../../contents/featuredProjects';
+import projects from './../../contents/projects';
 
 const Projects: React.FC = () => {
 	const navigate = useNavigate();
@@ -18,7 +18,7 @@ const Projects: React.FC = () => {
 				{/* Projects */}
 				<div className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
 					{
-						featuredProjects.map((featured, index) => {
+						projects.filter((project) => project.featured === true).map((featured, index) => {
 							return (
 								<FeaturedProject
 									key={index}

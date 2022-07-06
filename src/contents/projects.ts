@@ -2,6 +2,7 @@ const projects = [
 	{
 		year: 2021,
 		title: "ChatRoom",
+		description: "A simple online chatting web application.",
 		featured: true,
 		builtWith: [
 			"React","Firebase",
@@ -12,6 +13,7 @@ const projects = [
 	{
 		year: 2022,
 		title: "Noternal",
+		description: "An online simple note-taking web application built with <span>MERN Stack</span>",
 		featured: true,
 		builtWith: [
 			"MongoDB", "Express", "React", "NodeJS",
@@ -38,6 +40,7 @@ const projects = [
 	{
 		year: 2020,
 		title: "DCode - Text Editor",
+		description: "A text editor built using <span>Python</span> and <span>Tkinter</span>",
 		featured: true,
 		builtWith: [
 			"Python", "Tkinter"

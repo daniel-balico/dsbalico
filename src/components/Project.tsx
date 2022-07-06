@@ -19,7 +19,7 @@ const Project: React.FC<Props> = ({ year, title, featured, builtWith, external, 
 			<td className="text-sm font-light px-6 py-4 whitespace-nowrap leading-4">
 				{ title }
 				{
-					featured ? (<span className="inline-block text-xs pl-2 leading-none text-center whitespace-nowrap align-baseline font-bold text-primary rounded">Featured</span>)
+					featured ? (<span className="inline-block text-xs pl-2 leading-none text-center whitespace-nowrap align-baseline font-bold text-primary rounded">· Featured</span>)
 							 : null
 				}
 			</td>

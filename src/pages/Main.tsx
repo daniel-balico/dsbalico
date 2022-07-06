@@ -11,26 +11,27 @@ import Contact from "./../components/sections/Contact";
 import Footer from "./../components/sections/Footer";
 
 const Main: React.FC = () => {
+	const btnDisplay = (btn: HTMLElement) => {
+		if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) 
+	  		btn.style.display = 'block';
+		else btn.style.display = 'none';
+	}
+
 	const backToTop = () => {
-		const btn = document.getElementById('btn-back-to-top');
-
-		if(btn) {
-			window.onscroll = () => {
-			  	if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) 
-			  		btn.style.display = 'block';
-
-				else btn.style.display = 'none';
-			};
-
-			btn.addEventListener('click', () => {
-				document.body.scrollTop = 0;
-	  			document.documentElement.scrollTop = 0;
-			});
-		}
+		document.body.scrollTop = 0;
+	  	document.documentElement.scrollTop = 0;
 	}
 
 	useEffect(() => {
-		backToTop();
+		const btn = document.getElementById('btn-back-to-top') as HTMLElement;
+
+		if(btn) {
+			btnDisplay(btn);
+
+			window.onscroll = () => {
+			  	btnDisplay(btn);
+			};
+		}
 		
 	},[]);
 
@@ -44,9 +45,10 @@ const Main: React.FC = () => {
 
 			<button
 			  type="button"
+			  onClick={() => backToTop()}
 			  data-mdb-ripple="true"
 			  data-mdb-ripple-color="light"
-			  className="inline-block p-3 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out  bottom-5 right-5 fixed"
+			  className="inline-block p-3 bg-primary text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out  bottom-5 right-5 fixed"
 			  id="btn-back-to-top"
 			>
 			  <svg

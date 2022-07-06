@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 
 interface Props {
 	title: string;
-	description: string;
+	description?: string;
 	skills: Array<string>;
 	github?: string;
 	external?: string;
@@ -10,7 +10,6 @@ interface Props {
 }
 
 const FeaturedProject: React.FC<Props> = ({index, title, description, skills, github, external}) => {
-	
 	useEffect(() => {
 		if (index === 2) {
 			const featured_project = document.getElementById(String(index)) as HTMLElement;
@@ -30,7 +29,7 @@ const FeaturedProject: React.FC<Props> = ({index, title, description, skills, gi
 			<h3 className="dark:text-light font-bold text-2xl mt-1 mb-8">{ title }</h3>
 
 			{/* Description */}
-			<p  dangerouslySetInnerHTML={{__html: description}}
+			<p  dangerouslySetInnerHTML={{__html: description!}}
 				className="proj-desc text-light-secondary dark:text-dark-secondary text-sm">
 			</p>
 			
