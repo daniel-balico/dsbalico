@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
 import { useDarkMode } from "./ThemeProvider";
-import { useScrollSections } from 'react-scroll-section';
+import { useScrollSection } from 'react-scroll-section';
 
 interface Props {
 	project?: boolean;
@@ -10,7 +10,11 @@ interface Props {
 const Navbar: React.FC<Props> = ({ project }) => {
 	const { theme, toggleTheme } = useDarkMode();
 	const navigate = useNavigate();
-	const sections = useScrollSections();
+
+	const about = useScrollSection('about');
+	const skills = useScrollSection('skills');
+	const projects = useScrollSection('projects');
+	const contact = useScrollSection('contact');
 
 	useEffect(() => {
 		const darkModeToggle = document.getElementById("darkModeToggle") as HTMLInputElement;
@@ -55,26 +59,63 @@ const Navbar: React.FC<Props> = ({ project }) => {
 				</div>
 
 				<ul className="mt-20 md:mt-0 md:flex md:justify-end md:p-8">
-					{
-						sections.map(({ id, onClick, selected}, index) => {
-							return (
-								<li onClick={ () => { 
-										if (project) { navigate("/"); setTimeout(() => onClick(), 765); }
-										else { onClick(); }
-								}} data-selected={selected} key={id} className="cursor-pointer relative">
-									<span
-										
-										className="flex items-center text-sm py-4 px-6 h-12 overflow-hidden text-light-secondary dark:text-secondary text-ellipsis whitespace-nowrap rounded hover:text-primary dark:hover:text-primary transition duration-300 ease-in-out"
-										
-									>
-										<span className="text-primary mr-2">0{index+1}.</span> 
-										{ id.charAt(0).toUpperCase() + id.slice(1) }
-									</span>
-								</li>
-							)
-						})
-					}
-					<li className="">
+					<li onClick={ () => { 
+							if (project) { navigate("/"); setTimeout(() => about.onClick(), 765); }
+							else { about.onClick(); }
+					}} data-selected={about.selected} className="cursor-pointer relative">
+						<span
+							
+							className="flex items-center text-sm py-4 px-6 h-12 overflow-hidden text-light-secondary dark:text-secondary text-ellipsis whitespace-nowrap rounded hover:text-primary dark:hover:text-primary transition duration-300 ease-in-out"
+							
+						>
+							<span className="text-primary mr-2">01.</span> 
+							About
+						</span>
+					</li>
+
+					<li onClick={ () => { 
+							if (project) { navigate("/"); setTimeout(() => skills.onClick(), 765); }
+							else { skills.onClick(); }
+					}} data-selected={skills.selected} className="cursor-pointer relative">
+						<span
+							
+							className="flex items-center text-sm py-4 px-6 h-12 overflow-hidden text-light-secondary dark:text-secondary text-ellipsis whitespace-nowrap rounded hover:text-primary dark:hover:text-primary transition duration-300 ease-in-out"
+							
+						>
+							<span className="text-primary mr-2">02.</span> 
+							Skills
+						</span>
+					</li>
+
+					<li onClick={ () => { 
+							if (project) { navigate("/"); setTimeout(() => projects.onClick(), 765); }
+							else { projects.onClick(); }
+					}} data-selected={projects.selected} className="cursor-pointer relative">
+						<span
+							
+							className="flex items-center text-sm py-4 px-6 h-12 overflow-hidden text-light-secondary dark:text-secondary text-ellipsis whitespace-nowrap rounded hover:text-primary dark:hover:text-primary transition duration-300 ease-in-out"
+							
+						>
+							<span className="text-primary mr-2">03.</span> 
+							Projects
+						</span>
+					</li>
+
+					<li onClick={ () => { 
+							if (project) { navigate("/"); setTimeout(() => contact.onClick(), 765); }
+							else { contact.onClick(); }
+					}} data-selected={contact.selected} className="cursor-pointer relative">
+						<span
+							
+							className="flex items-center text-sm py-4 px-6 h-12 overflow-hidden text-light-secondary dark:text-secondary text-ellipsis whitespace-nowrap rounded hover:text-primary dark:hover:text-primary transition duration-300 ease-in-out"
+							
+						>
+							<span className="text-primary mr-2">04.</span> 
+							Contact
+						</span>
+					</li>
+
+					<li>
 						<div className="form-check form-switch ml-5 mt-3">
 							<input
 								className="form-check-input checked:bg-primary appearance-none w-9 -ml-10 mr-2 rounded-full float-left h-5 align-top bg-no-repeat bg-contain bg-dark-secondary focus:outline-none cursor-pointer shadow-sm"
