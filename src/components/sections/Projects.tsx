@@ -36,7 +36,7 @@ const Projects: React.FC = () => {
 
 				<div className="text-center mt-4">	
 					<button onClick={() => navigate('/projects')} className="x-auto mt-8 border border-primary px-6 py-3 rounded text-primary hover:bg-primary-light dark:hover:bg-primary-dark transition-all duration-300">
-						Other Noteworthy Projects
+						All Projects
 					</button>
 				</div>
 			</div>

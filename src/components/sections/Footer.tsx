@@ -13,7 +13,7 @@ const Footer: React.FC = () => {
 	}
 	
 	return (
-		<div className="pb-12 text-gray-500 dark:text-secondary text-center">
+		<div className="pb-8 text-gray-500 dark:text-secondary text-center">
 			<div className="text-center flex gap-8 justify-center">
 				<a href="https://www.facebook.com/daniel.balico" className="hover:text-primary transition=all">
 					<Facebook/>

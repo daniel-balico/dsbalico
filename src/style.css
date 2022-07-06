@@ -37,6 +37,10 @@ body {
   font-family: "SF Mono Heavy" !important;
 }
 
+.visible {
+  visibility: visible !important;
+}
+
 .line-after {
   display: flex;
   align-items: center;

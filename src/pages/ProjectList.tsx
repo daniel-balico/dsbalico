@@ -7,6 +7,7 @@ import Footer from './../components/sections/Footer';
 interface iProjects {
 	year: number;
 	title: string;
+	featured?: boolean;
 	builtWith: Array<string>;
 	external?: string;
 	github?: string;
@@ -47,7 +48,7 @@ const ProjectList: React.FC = () => {
 						<div className="py-2 inline-block min-w-full sm:px-6 lg:px-8">
 							<div className="overflow-hidden">
 								<table className="min-w-full">
-									<thead className="bg-gray-100 dark:bg-darker dark:text-light border-b dark:border-dark">
+									<thead className="bg-gray-100 dark:bg-darker dark:text-light border-b dark:border-dark transition duration-300 ease-in-out">
 										<tr>
 											<th scope="col" className="text-sm font-medium px-6 py-4 text-left">
 												Year
@@ -73,6 +74,7 @@ const ProjectList: React.FC = () => {
 															key={index}
 															year={project.year}
 															title={project.title}
+															featured={project.featured}
 															builtWith={project.builtWith}
 															external={project.external}
 															github={project.github}

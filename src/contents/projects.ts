@@ -2,6 +2,7 @@ const projects = [
 	{
 		year: 2021,
 		title: "ChatRoom",
+		featured: true,
 		builtWith: [
 			"React","Firebase",
 		],
@@ -11,6 +12,7 @@ const projects = [
 	{
 		year: 2022,
 		title: "Noternal",
+		featured: true,
 		builtWith: [
 			"MongoDB", "Express", "React", "NodeJS",
 		],
@@ -36,6 +38,7 @@ const projects = [
 	{
 		year: 2020,
 		title: "DCode - Text Editor",
+		featured: true,
 		builtWith: [
 			"Python", "Tkinter"
 		],

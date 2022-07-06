@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
 import { useDarkMode } from "./ThemeProvider";
 import { useScrollSections } from 'react-scroll-section';
@@ -8,7 +8,6 @@ interface Props {
 }
 
 const Navbar: React.FC<Props> = ({ project }) => {
-	const [isOpen, setIsOpen] = useState<boolean>(false);
 	const { theme, toggleTheme } = useDarkMode();
 	const navigate = useNavigate();
 	const sections = useScrollSections();
@@ -22,55 +21,46 @@ const Navbar: React.FC<Props> = ({ project }) => {
 	}, [theme]);
 
 	useEffect(() => {
-		const hamburger = document.getElementById("hamburger");
-		const navbar = document.getElementById("navbar");
-		const nav_bottom_layer = document.getElementById("nav-bottom-layer");
+		const offcanvasRight = document.getElementById("offcanvasRight") as HTMLInputElement;
+		const mediaQuery = window.matchMedia("(min-width: 768px)")
+		
+		if(offcanvasRight) {
+			mediaQuery.addListener(() => {
+				if (mediaQuery.matches) { // If media query matches
+					offcanvasRight.classList.remove("offcanvas-end");
 
-		if (hamburger && navbar && nav_bottom_layer) {
-			if (isOpen) {
-				navbar.classList.remove("animation_wipe-right");
-				navbar.classList.add("animation_wipe-left");
-				navbar.classList.remove("hidden");
-
-				nav_bottom_layer.classList.remove("hidden");
-
-				hamburger.classList.add("is-active");
-			}
-			else {
-				navbar.classList.remove("animation_wipe-left");
-				navbar.classList.add("animation_wipe-right");
-
-				nav_bottom_layer.classList.add("hidden");
-				hamburger.classList.remove("is-active");
-
-				setTimeout(() => navbar.classList.add("hidden"), 300);
-			}
+					offcanvasRight.style.removeProperty("visibility")
+				} else {
+					offcanvasRight.classList.add("offcanvas-end");
+				}
+			}) 	
 		}
-	}, [isOpen])
+		
+	}, []);
 
 	return (
 		<>
-			<button
-				onClick={() => setIsOpen(!isOpen)}
-				className="z-50 md:hidden hamburger fixed right-5 top-5"
-				id="hamburger"
-			>
-				<span className="line bg-primary"></span>
-				<span className="line bg-primary"></span>
-				<span className="line bg-primary"></span>
+			<button className="z-50 md:hidden hamburger fixed right-5 top-5"id="hamburger" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+				<span className="line bg-primary"></span><span className="line bg-primary"></span><span className="line bg-primary"></span>
 			</button>
 
 			<div
-				id="navbar"
-				className="fixed z-30 bg-gray-100 dark:bg-dark hidden md:block w-60 right-0 h-full shadow-lg md:shadow-none px-1 md:w-full md:h-auto"
+				className="offcanvas fixed bg-gray-100 dark:bg-dark invisible md:visible w-72 right-0 h-full shadow-lg md:shadow-none px-1 md:w-full md:h-auto transition duration-300 ease-in-out bg-clip-padding shadow-sm outline-none"
+				tabIndex={-1} id="offcanvasRight" aria-labelledby="offcanvasRightLabel"
 			>
+				<div className="offcanvas-header flex md:hidden items-center justify-between p-4">
+					<button type="button" id="hamburger" className="is-active z-50 md:hidden hamburger fixed right-5 top-5" data-bs-dismiss="offcanvas" aria-label="Close">
+						<span className="line bg-primary"></span><span className="line bg-primary"></span><span className="line bg-primary"></span>
+					</button>
+				</div>
+
 				<ul className="mt-20 md:mt-0 md:flex md:justify-end md:p-8">
 					{
 						sections.map(({ id, onClick, selected}, index) => {
 							return (
 								<li onClick={ () => { 
 										if (project) { navigate("/"); setTimeout(() => onClick(), 765); }
-										else { onClick(); setIsOpen(false);}
+										else { onClick(); }
 								}} data-selected={selected} key={id} className="cursor-pointer relative">
 									<span
 										
@@ -103,9 +93,6 @@ const Navbar: React.FC<Props> = ({ project }) => {
 					</li>
 				</ul>
 			</div>
-
-			{/* Darken Background */}
-			<div id="nav-bottom-layer" className="z-[2] hidden fixed w-full h-full bg-dark opacity-90"></div>
 		</>
 	);
 };

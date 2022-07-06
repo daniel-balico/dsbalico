@@ -4,19 +4,24 @@ import {External, Github} from './Icons';
 interface Props {
 	year: number;
 	title: string;
+	featured?: boolean
 	builtWith: Array<string>;
 	external?: string;
 	github?: string;
 }
 
-const Project: React.FC<Props> = ({ year, title, builtWith, external, github }) => {
+const Project: React.FC<Props> = ({ year, title, featured, builtWith, external, github }) => {
 	return (
-		<tr className="bg-gray-100 dark:bg-darker text-light-secondary dark:text-dark-secondary border-b dark:border-dark">
+		<tr className="bg-gray-100 dark:bg-darker text-light-secondary dark:text-dark-secondary border-b dark:border-dark transition duration-300 ease-in-out">
 			<td className="px-6 py-4 whitespace-nowrap text-primary text-sm font-medium">
 				{ year }
 			</td>
 			<td className="text-sm font-light px-6 py-4 whitespace-nowrap leading-4">
 				{ title }
+				{
+					featured ? (<span className="inline-block text-xs pl-2 leading-none text-center whitespace-nowrap align-baseline font-bold text-primary rounded">Featured</span>)
+							 : null
+				}
 			</td>
 			<td className="text-sm break-all text-xs font-light px-6 py-4">
 				{ builtWith.map((tech, index, row) => {
