@@ -31,6 +31,7 @@ const Footer: React.FC = () => {
 					<Github/>
 				</a>
 			</div>
+
 			<button onClick={() => { copyEmail() }} className="hover:text-primary relative transition-all text-xs mt-4">
 				{/* Notification if copied */}
 				<div id="email_copied" className="hidden absolute inline-block top-2 -right-10 bottom-auto left-auto translate-x-2/4 -translate-y-1/2 rotate-0 skew-x-0 skew-y-0 scale-x-100 scale-y-100 py-0.5 px-2 text-xs leading-none text-center whitespace-nowrap align-baseline bg-primary text-white rounded-full z-10">Copied!</div>

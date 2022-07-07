@@ -2,7 +2,6 @@ import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { ScrollingProvider } from 'react-scroll-section';
 import Main from "./pages/Main";
-import ProjectList from "./pages/ProjectList";
 import { ThemeProvider } from "./components/ThemeProvider";
 
 const App: React.FC = () => {
@@ -12,7 +11,6 @@ const App: React.FC = () => {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Main />} />
-            <Route path="/projects" element={<ProjectList />} />
           </Routes>
         </BrowserRouter>
       </ScrollingProvider>

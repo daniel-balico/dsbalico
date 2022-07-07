@@ -22,7 +22,7 @@ const FeaturedProject: React.FC<Props> = ({index, title, description, skills, gi
 	}, [index])
 
 	return (
-		<div id={String(index)} className="relative bg-gray-50 dark:bg-darker w-full h-full md:h-[380px] mx-auto shadow-lg p-10">
+		<div id={String(index)} className="relative bg-gray-50 dark:bg-darker w-full h-full md:h-[380px] mx-auto shadow-sm p-10">
 			<p className="text-primary text-sm">Featured Project</p>
 
 			{/* Title */}
@@ -30,7 +30,7 @@ const FeaturedProject: React.FC<Props> = ({index, title, description, skills, gi
 
 			{/* Description */}
 			<p  dangerouslySetInnerHTML={{__html: description!}}
-				className="proj-desc text-light-secondary dark:text-dark-secondary text-sm">
+				className="proj-desc text-light-secondary dark:text-dark-secondary text-sm leading-relaxed">
 			</p>
 			
 			<div className="md:absolute bottom-11">
@@ -39,7 +39,7 @@ const FeaturedProject: React.FC<Props> = ({index, title, description, skills, gi
 					{
 						skills.map((skill, index) => {
 							return (
-								<span className="whitespace-nowrap" key={index}>{skill}</span>
+								<span className="whitespace-nowrap" key={`featured_${skill}`}>{skill}</span>
 							)
 						})
 					}

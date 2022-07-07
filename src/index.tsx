@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./fonts/fonts.css";
 import "./style.css";
+import "animate.css/animate.min.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import 'tw-elements';

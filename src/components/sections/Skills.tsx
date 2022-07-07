@@ -17,7 +17,7 @@ const Skills: React.FC = () => {
 						{/* Programming Languages */}
 						<div className="p-4">
 							<p className="text-dark dark:text-light mb-2">Programming Languages</p>
-							<ul>
+							<ul className="leading-relaxed">
 								{
 									skills[0].map((language) => {
 										return (
@@ -31,7 +31,7 @@ const Skills: React.FC = () => {
 						{/* Libraries and Frameworks */}
 						<div className="p-4">
 							<p className="text-dark dark:text-light mb-2">Libraries and Frameworks</p>
-							<ul>
+							<ul className="leading-relaxed">
 								{
 									skills[1].map((framework) => {
 										return (
@@ -45,7 +45,7 @@ const Skills: React.FC = () => {
 						{/* Tools and Platforms */}
 						<div className="p-4">
 							<p className="text-dark dark:text-light mb-2">Tools and Platforms</p>
-							<ul>
+							<ul className="leading-relaxed">
 								{
 									skills[2].map((platform) => {
 										return (
@@ -55,7 +55,6 @@ const Skills: React.FC = () => {
 								}
 							</ul>
 						</div>
-
 					</div>
 				</div>
 			</div>

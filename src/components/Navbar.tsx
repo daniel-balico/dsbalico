@@ -9,6 +9,7 @@ interface Props {
 
 const Navbar: React.FC<Props> = ({ project }) => {
 	const { theme, toggleTheme } = useDarkMode();
+
 	const navigate = useNavigate();
 
 	const about = useScrollSection('about');
@@ -24,21 +25,24 @@ const Navbar: React.FC<Props> = ({ project }) => {
 
 	}, [theme]);
 
+
 	useEffect(() => {
 		const offcanvasRight = document.getElementById("offcanvasRight") as HTMLInputElement;
 		const mediaQuery = window.matchMedia("(min-width: 768px)")
-		
-		if(offcanvasRight) {
-			mediaQuery.addListener(() => {
+
+		const mediaCheck = () => {
+			if(offcanvasRight) {
 				if (mediaQuery.matches) { // If media query matches
 					offcanvasRight.classList.remove("offcanvas-end");
 
-					offcanvasRight.style.removeProperty("visibility")
-				} else {
-					offcanvasRight.classList.add("offcanvas-end");
-				}
-			}) 	
+					offcanvasRight.style.removeProperty("visibility");
+				} 
+				else offcanvasRight.classList.add("offcanvas-end");
+			}
 		}
+		
+		mediaQuery.addListener(mediaCheck); 
+		mediaCheck(); // Initial Check	
 		
 	}, []);
 

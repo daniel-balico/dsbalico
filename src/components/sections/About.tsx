@@ -1,7 +1,33 @@
 import React from "react";
 import { Section } from 'react-scroll-section';
+import image from './../../images/profile.webp'
 
 const About: React.FC = () => {
+	
+	const imgMouseEnter = () => {
+		const border = document.getElementById("border");
+
+		if(border) {
+			border.classList.remove("top-3");
+			border.classList.remove("left-3");
+
+			border.classList.add("top-2");
+			border.classList.add("left-2");
+		}
+	}
+
+	const imgMouseLeave = () => {
+		const border = document.getElementById("border");
+
+		if(border) {
+			border.classList.add("top-3");
+			border.classList.add("left-3");
+
+			border.classList.remove("top-2");
+			border.classList.remove("left-2");
+		}
+	}
+
 	return (
 		<Section
 			id="about"
@@ -14,7 +40,7 @@ const About: React.FC = () => {
 						ㅤAbout Me
 					</p>
 
-					<div className="mt-4 text-sm sm:text-base dark:text-dark-secondary">
+					<div className="mt-4 text-sm sm:text-base dark:text-dark-secondary leading-relaxed">
 						<p>
 							Hello! I am Daniel Shan Balico, and I enjoy
 							programming and building software applications.
@@ -37,7 +63,7 @@ const About: React.FC = () => {
 							</a>
 						</p>
 
-						<p className="mt-4">
+						<p className="mt-4 v">
 							Here are a few technologies I've been working with
 							recently:
 						</p>
@@ -59,10 +85,11 @@ const About: React.FC = () => {
 					</div>
 				</div>
 
-				{/* Image */}
-				<div className="flex-none image-outline after:border after:border-primary w-64 h-64 mt-12 mx-auto">
-					<div className="image-fill w-full h-full bg-primary opacity-50 transition-all"></div>
-				</div>
+				<div className="relative w-64 h-64 bg-no-repeat bg-cover max-w-xs  flex-none mt-12 mx-auto">
+			    	<img src={image} className="z-50" alt="Daniel Shan Balico" />
+			    	<button onMouseEnter={imgMouseEnter} onMouseLeave={imgMouseLeave} className="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed opacity-40 hover:opacity-0 transition duration-300 ease-in-out bg-blue-400"></button>
+			    	<div id="border" className="absolute top-3 left-3 w-full h-full border -z-10 transition-all border-primary duration-300"></div>
+			    </div>
 			</div>
 		</Section>
 	);
