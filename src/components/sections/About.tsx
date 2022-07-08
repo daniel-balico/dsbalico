@@ -39,7 +39,6 @@ const About: React.FC = () => {
 						<span className="text-primary font-normal">01.</span>
 						ㅤAbout Me
 					</p>
-
 					<div className="mt-4 text-sm sm:text-base dark:text-dark-secondary leading-relaxed">
 						<p>
 							Hello! I am Daniel Shan Balico, and I enjoy
@@ -86,9 +85,9 @@ const About: React.FC = () => {
 				</div>
 
 				<div className="relative w-64 h-64 bg-no-repeat bg-cover max-w-xs  flex-none mt-12 mx-auto">
-			    	<img src={image} className="z-50" alt="Daniel Shan Balico" />
-			    	<button onMouseEnter={imgMouseEnter} onMouseLeave={imgMouseLeave} className="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed opacity-40 hover:opacity-0 transition duration-300 ease-in-out bg-blue-400"></button>
-			    	<div id="border" className="absolute top-3 left-3 w-full h-full border -z-10 transition-all border-primary duration-300"></div>
+			    	<img src={image} className="z-50 rounded-md" alt="Daniel Shan Balico" />
+			    	<button onMouseEnter={imgMouseEnter} onMouseLeave={imgMouseLeave} className="rounded-md absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed opacity-40 hover:opacity-0 transition duration-300 ease-in-out bg-blue-400"></button>
+			    	<div id="border" className="absolute top-3 left-3 w-full h-full border -z-10 rounded-md transition-all border-primary duration-300"></div>
 			    </div>
 			</div>
 		</Section>

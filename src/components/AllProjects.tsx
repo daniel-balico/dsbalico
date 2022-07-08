@@ -39,7 +39,7 @@ const AllProjects = () => {
 			<div className="flex flex-col mt-4">
 				<div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
 					<div className="py-2 inline-block min-w-full sm:px-6 lg:px-8">
-						<div className="overflow-hidden">
+						<div className="overflow-hidden rounded-md">
 							<table className="min-w-full">
 								<thead className="bg-gray-200 dark:bg-darker dark:text-light border-b dark:border-dark transition duration-300 ease-in-out">
 									<tr>

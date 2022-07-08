@@ -1,2 +1,1 @@
-declare module "react-reveal/Slide";
-declare module "react-reveal/Flip";
+declare module 'react-animate-on-scroll'

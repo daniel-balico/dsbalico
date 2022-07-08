@@ -35,7 +35,7 @@ const Projects: React.FC = () => {
 				</div>
 
 				<div className="text-center mt-4">	
-					<button data-mdb-ripple="true" data-mdb-ripple-color="primary" className="x-auto mt-8 border border-primary px-6 py-3 rounded text-primary hover:bg-primary-light dark:hover:bg-primary-dark transition-all duration-300" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+					<button data-mdb-ripple="true" data-mdb-ripple-color="primary" className="x-auto mt-8 border border-primary px-6 py-3 rounded-md text-primary hover:bg-primary-light dark:hover:bg-primary-dark transition-all duration-300" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
 						All Projects
 					</button>
 				</div>

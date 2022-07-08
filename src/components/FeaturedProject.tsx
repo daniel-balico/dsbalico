@@ -22,7 +22,7 @@ const FeaturedProject: React.FC<Props> = ({index, title, description, skills, gi
 	}, [index])
 
 	return (
-		<div id={String(index)} className="relative bg-gray-50 dark:bg-darker w-full h-full md:h-[380px] mx-auto shadow-sm p-10">
+		<div id={String(index)} className="rounded-md relative bg-gray-50 dark:bg-darker w-full h-full md:h-[380px] mx-auto shadow-sm p-10">
 			<p className="text-primary text-sm">Featured Project</p>
 
 			{/* Title */}
